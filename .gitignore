@@ -1,0 +1,14 @@
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environments
+venv/
+.env/
+
+# Ignore IDE/project config
+.vscode/
+.idea/
+
+# Ignore memory and other sensitive/generated files
+memory.json
