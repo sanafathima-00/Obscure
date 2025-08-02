@@ -1,0 +1,10 @@
+# Local memory and temporary files
+memory.json
+response.mp3
+
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
