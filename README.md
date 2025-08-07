@@ -10,12 +10,12 @@
 
 ## ✨ Features
 
-- 🧠 Runs local LLM (Phi via Ollama)
+- 🧠 Runs local LLM (Phi 3 mini via Ollama)
 - 🗣️ Real-time speech-to-text input
 - 🗨️ Natural voice responses using text-to-speech
 - 🧾 JSON-based short-term memory for contextual awareness
 - 🧰 Prompt engineering for refined assistant behavior
-- 🖥️ Screen-aware through image or OCR hooks (planned)
+- 🖥️ Screen-aware through image or OCR hooks
 - 💻 <5% CPU usage on modest hardware (16GB RAM, i7 CPU)
 
 ---
@@ -24,11 +24,11 @@
 
 - **Language**: Python
 - **LLM Runtime**: Ollama
-- **Model**: Phi (Lightweight LLM)
+- **Model**: Phi 3 mini (Lightweight LLM)
 - **Voice Input**: `speech_recognition`
-- **Voice Output**: `pyttsx3` / `gTTS`
+- **Voice Output**: `pyttsx3` / `edge-tts`
 - **Memory**: Local JSON files
-- **Screen Hook** (optional): `pyautogui`, `pytesseract`
+- **Screen Hook**: `pyautogui`, `pytesseract`
 
 ---
 
@@ -37,7 +37,7 @@
 ### Prerequisites
 - Python 3.10+
 - Ollama installed and running
-- Phi model pulled via Ollama: `ollama run phi`
+- Phi model pulled via Ollama: `ollama run phi3 mini`
 
 ### Steps
 
@@ -65,16 +65,11 @@ python main.py
 
 ```
 project-obscure/
+├── congig.py
 ├── main.py
-├── memory.json
-├── prompts/
-│   └── system_prompt.txt
-├── utils/
-│   ├── speech.py
-│   ├── memory.py
-│   └── screen.py (optional)
-├── requirements.txt
-└── README.md
+├── memory.py
+├── speech.py
+└── vision.py
 ```
 
 ---
@@ -84,20 +79,20 @@ project-obscure/
 - `ollama`
 - `requests`
 - `speech_recognition`
-- `pyttsx3` or `gTTS`
+- `pyttsx3` or `edge-tts`
 - `pyaudio`
 - `json`
-- `pyautogui` (optional)
-- `pytesseract` (optional)
+- `pyautogui` 
+- `pytesseract` 
 
 ---
 
 ## 🔧 Customization
 
-- Edit the prompt logic in `prompts/system_prompt.txt`
-- Tweak voice engine in `speech.py`
+- Edit the prompt logic in `config.py`
+- Tweak voice engine in `config.py`
 - Extend memory logic via `memory.py`
-- Add screen awareness using `screen.py`
+- Add screen awareness using `vision.py`
 
 ---
 
