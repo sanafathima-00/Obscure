@@ -1,5 +1,6 @@
 import json
-from config import MEMORY_FILE, SYSTEM_PROMPT
+# We now import CHAT_SYSTEM_PROMPT instead of the old name
+from config import MEMORY_FILE, CHAT_SYSTEM_PROMPT
 
 def save_memory(history):
     """Saves the conversation history to the JSON file."""
@@ -12,5 +13,5 @@ def load_memory():
         with open(MEMORY_FILE, 'r') as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
-        # If the file doesn't exist or is empty/corrupt, start fresh
-        return [{'role': 'system', 'content': SYSTEM_PROMPT}]
+        # We now use the correct variable when creating a new memory file
+        return [{'role': 'system', 'content': CHAT_SYSTEM_PROMPT}]
